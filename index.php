@@ -1,0 +1,100 @@
+<?php ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For You 💌</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- STAGE 1: Envelope -->
+  <div id="envelope-stage" style="opacity:1; visibility:visible;">
+    <div class="petals-bg" id="petalsBg"></div>
+
+    <div id="envelope-wrap">
+      <div id="envelope" onclick="openEnvelope()">
+        <div class="env-back"></div>
+        <div class="env-flap" id="envFlap"></div>
+        <div class="env-body">
+          <div class="env-letter-peek" id="letterPeek">
+            <span>Open Me 💌</span>
+          </div>
+        </div>
+        <div class="env-left"></div>
+        <div class="env-right"></div>
+        <div class="env-bottom"></div>
+        <div class="wax-seal" id="waxSeal">
+          <div class="seal-inner">♥</div>
+        </div>
+      </div>
+      <p class="tap-hint">tap the envelope</p>
+    </div>
+  </div>
+
+  <!-- STAGE 2: Letter with Typographic Portrait -->
+  <div id="letter-stage">
+    <div class="letter-paper" id="letterPaper">
+      <div class="letter-inner">
+        <div class="typo-portrait-container" id="typoContainer">
+          <canvas id="typoCanvas"></canvas>
+        </div>
+        <div class="letter-footer">
+          <p class="letter-subtitle">— a portrait woven in words, just for you —</p>
+          <button id="continueBtn" onclick="transitionToMain()">Enter ♥</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 3: Main Valentine Page -->
+  <div id="main-stage">
+    <div class="portrait-bg" id="portraitBg"></div>
+    <div class="vignette"></div>
+    <div class="overlay-tint"></div>
+
+    <div class="main-content">
+      <div class="floating-hearts" id="floatingHearts"></div>
+
+      <div class="message-card" id="messageCard">
+        <div class="card-deco top-deco">✦ ✦ ✦</div>
+        <h1 class="main-title">Happy Valentine's</h1>
+        <div class="divider-line">
+          <span>❧</span>
+        </div>
+        <p class="main-poem">
+          In every word I find your face,<br/>
+          in every silence, your embrace.<br/>
+          No letter holds what my heart knows—<br/>
+          that you're the reason everything glows.
+        </p>
+        <div class="divider-line bottom">
+          <span>❧</span>
+        </div>
+        <p class="signature">with love, always 💌</p>
+        <div class="card-deco bottom-deco">✦ ✦ ✦</div>
+      </div>
+    </div>
+
+    <div class="music-bar" id="musicBar">
+      <div class="music-icon">♪</div>
+      <div class="music-info">
+        <span class="music-title">You & I — Katy Perry</span>
+        <div class="music-wave">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <audio id="bgMusic" loop>
+        <source src="You and I (Harleys in Hawaii) - Katy Perry  Slowed  Reverbed  Attractive Playlist.mp3" type="audio/mpeg"/>
+      </audio>
+    </div>
+
+    <!-- Toggle hint -->
+    <div id="toggleHint">click the card to hide it</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
